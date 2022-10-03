@@ -1,14 +1,14 @@
-$ kubectl port-forward pod/udacity1-66b9875b98-446cj 8000:80
+$ ./run_kubernetes.sh 
+deployment.apps/udacity created
+NAME                       READY   STATUS    RESTARTS   AGE
+udacity-7f79755d5f-kvtsf   1/1     Running   0          60s
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
-Handling connection for 8000
 
 $ kubectl get pods
-NAME                        READY   STATUS             RESTARTS   AGE
-udacity-59c9d7fc47-dx7z2    0/1     InvalidImageName   0          5m2s
-udacity1-66b9875b98-446cj   1/1     Running            0          3m14s
-
-$ kubectl logs udacity1-66b9875b98-446cj
+NAME                       READY   STATUS    RESTARTS   AGE
+udacity-7f79755d5f-kvtsf   1/1     Running   0          3m11s
+$ kubectl logs udacity-7f79755d5f-kvtsf
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -29,15 +29,16 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   from ._gradient_boosting import predict_stages
  * Debugger is active!
- * Debugger PIN: 262-253-076
-[2022-09-30 09:04:20,364] INFO in app: JSON payload: 
+ * Debugger PIN: 215-731-435
+[2022-10-03 04:07:33,356] INFO in app: JSON payload: 
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2022-09-30 09:04:20,385] INFO in app: Inference payload DataFrame: 
+[2022-10-03 04:07:33,378] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2022-09-30 09:04:20,400] INFO in app: Scaling Payload: 
+[2022-10-03 04:07:33,388] INFO in app: Scaling Payload: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2022-09-30 09:04:20,405] INFO in app: Prediction Value: 
+[2022-10-03 04:07:33,391] INFO in app: Prediction Value: 
 [20.35373177134412]
-127.0.0.1 - - [30/Sep/2022 09:04:20] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [03/Oct/2022 04:07:33] "POST /predict HTTP/1.1" 200 -
+$ 
