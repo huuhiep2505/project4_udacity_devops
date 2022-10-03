@@ -1,3 +1,13 @@
+$ kubectl port-forward pod/udacity1-66b9875b98-446cj 8000:80
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+$ kubectl get pods
+NAME                        READY   STATUS             RESTARTS   AGE
+udacity-59c9d7fc47-dx7z2    0/1     InvalidImageName   0          5m2s
+udacity1-66b9875b98-446cj   1/1     Running            0          3m14s
+
 $ kubectl logs udacity1-66b9875b98-446cj
  * Serving Flask app "app" (lazy loading)
  * Environment: production

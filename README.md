@@ -1,4 +1,3 @@
-<include a CircleCI status badge, here>
 [![CircleCI](https://circleci.com/gh/huuhiep2505/project4_udacity_devops/tree/main.svg?style=svg&circle-token=9920d8878bbb2c6ecd38fee0809a8f9993229fd1)](https://github.com/huuhiep2505/project4_udacity_devops)
 
 ## Project Overview
